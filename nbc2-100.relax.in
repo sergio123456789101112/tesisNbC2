@@ -1,0 +1,55 @@
+&CONTROL
+       calculation='relax',
+       title='NB relax',
+       prefix='NB',
+      ! verbosity='high',
+       restart_mode='from_scratch',
+       nstep=100,
+       tprnfor=.true.,
+       outdir= "/home/fernando/serse/temp",
+       !disk_io='default',
+       pseudo_dir='/home/fernando/serse/pseudos',
+       tstress=.false.,
+       forc_conv_thr=1.0d-4,
+       etot_conv_thr=1.0d-5,
+/
+&SYSTEM
+  ibrav = 8,
+  celldm(1) = 9.373042,
+  celldm(2) = 0.713709677,
+  celldm(3) = 6.048387097 ,
+  nat =6  ,
+  ntyp = 2,
+  ecutwfc =90.0 ,
+  ecutrho =400.0 ,
+  occupations = 'smearing' ,
+  degauss = 1.0d-2 ,
+  smearing = 'gaussian' ,
+  !vdw_corr = 'grimme-d3', 
+/
+&ELECTRONS
+  electron_maxstep = 100,
+  conv_thr = 1.0d-8 ,
+  mixing_mode = 'plain' ,
+  mixing_beta = 0.7 ,
+  !diagonalization ='cg'
+/
+&IONS
+/
+ATOMIC_SPECIES
+ Nb    92.90638  Nb.pbe-sp-hgh.UPF
+ C    12.011     C.pbe-hgh.UPF
+!CELL_PARAMETERS (alat = 4.96)
+!  1.00000 0.00000         0.0000000
+!  0.00000 0.71370967741   0.0000000
+!  0.00000 0.00000000000   6.000000
+!
+ATOMIC_POSITIONS ( alat = 4.96 )
+Nb            0.5000000000       -0.0022783195        0.2157641829
+Nb            0.0000000000        0.3545634703        0.2508983756
+C             1.1379637197       -0.0023007627        0.0065403318
+C             1.8620362803       -0.0023007627        0.0065403312
+C             1.3620349349        0.3545856067        0.4601283886
+C             1.6379650651        0.3545856067        0.4601283903
+K_POINTS automatic
+5 5 1 0 0 0
